@@ -70,6 +70,7 @@ EncoderFormatting implements
     record : List { key : Str, value : Encoder fmt } -> Encoder fmt where fmt implements EncoderFormatting
     tuple : List (Encoder fmt) -> Encoder fmt where fmt implements EncoderFormatting
     tag : Str, List (Encoder fmt) -> Encoder fmt where fmt implements EncoderFormatting
+    dict : Dict k v, (k -> Encoder fmt), (v -> Encoder fmt) -> Encoder fmt where fmt implements EncoderFormatting
 
 ## Creates a custom encoder from a given function.
 ##
